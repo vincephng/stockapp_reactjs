@@ -35,8 +35,17 @@ class StockInfo extends Component{
  handleOnChange = (event) => {
      const input = event.target.value;
      const filteredname = searchName.filter(id =>id.name.toLowerCase().includes(input.toLowerCase()));
-     const filtersymbol = searchName.filter(id =>id.symbol.toLowerCase().includes(input.toLowerCase()))
-     this.comparation(filteredname,filtersymbol)
+     const filtersymbol = searchName.filter(id =>{return (id.symbol.toLowerCase() === input.toLowerCase())})
+     
+      if(filtersymbol.length == 1){
+        this.setState({result: filtersymbol, suggestion:filtersymbol})
+      }else{
+        this.setState({result: filteredname, suggestion: filteredname.slice(0,5)})
+
+      }
+        
+        // this.comparation(filteredname,filtersymbol)}
+
      this.setState({ticker: input})
      if(!input){
        this.setState({suggestion: [], warningInput:''})
@@ -55,27 +64,26 @@ class StockInfo extends Component{
  
 }
 
- comparation = (arrName,arrSymbol) =>{
-   const nameLength = arrName.length
-   const symbolLength = arrSymbol.length
-   
-   if(nameLength > 0 && symbolLength > 0 ){
-     const min = Math.min(nameLength,symbolLength)
-     if(nameLength == min){
-      this.setState({result: arrName, suggestion: arrName.slice(0,5)})
-     }else{
-      this.setState({result: arrSymbol, suggestion: arrSymbol.slice(0,5)})}
-   }else{
-     const max = Math.max(nameLength,symbolLength)
-     if(nameLength == max){
-      this.setState({result: arrName,suggestion: arrName.slice(0,5)})
-     }else{
-      this.setState({result: arrSymbol,suggestion: arrSymbol.slice(0,5)})
-     }
-   }
-   console.log(this.state.result)
+//  comparation = (arrName,arrSymbol) =>{
+//    const nameLength = arrName.length
+//    const symbolLength = arrSymbol.length
+//    if(nameLength > 0 && symbolLength > 0 ){
+//      const min = Math.min(nameLength,symbolLength)
+//      if(nameLength == min){
+//       this.setState({result: arrName, suggestion: arrName.slice(0,5)})
+//      }else{
+//       this.setState({result: arrSymbol, suggestion: arrSymbol.slice(0,5)})}
+//    }else{
+//      const max = Math.max(nameLength,symbolLength)
+//      if(nameLength == max){
+//       this.setState({result: arrName,suggestion: arrName.slice(0,5)})
+//      }else{
+//       this.setState({result: arrSymbol,suggestion: arrSymbol.slice(0,5)})
+//      }
+//    }
+//    console.log(this.state.result)
 
- }
+//  }
     
  checkValid = () => {
      const input = this.state.ticker

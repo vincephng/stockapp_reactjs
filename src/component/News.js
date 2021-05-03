@@ -32,7 +32,7 @@ const News = (symbol) =>{
                             <div className='content'>
                                 <div className='title-content'>
                                     <p>{obj.headline}</p>
-                                    <p className='read-more'><a href={obj.url}>Read more &#8594;</a></p>
+                                    <p className='read-more'><a target='_blank' href={obj.url}>Read more &#8594;</a></p>
                                 </div>
                                 <div className='img-news'><img src={obj.image}/></div>
                             </div>
