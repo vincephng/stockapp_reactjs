@@ -1,0 +1,190 @@
+/* .formlg-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1040;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: .5;
+  
+
+} */
+
+.formlg-container {
+    margin: 50px auto;
+    width: 60%;
+    max-width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 18px;
+    height: 85%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: #fff;
+    overflow: auto;
+    position: fixed;
+    left: 20%;
+    top: 0;
+    background-color: #1a1a1c;
+    
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    font-size: 2.5rem;
+    z-index: 1;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .formlg-content-left {
+    background: linear-gradient(
+      90deg,
+      rgb(39, 176, 255) 0%,
+      rgb(0, 232, 236) 100%
+    );
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+    
+  }
+  
+  .formlg-img {
+    width: 100%;
+    height: 100%; 
+    border-radius: 10px 0px 0px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } 
+  
+  
+  .formlg-content-right {
+    border-radius: 10px 10px 10px 0;
+    position: relative;
+    align-items: center;
+    
+    /* background: linear-gradient(20deg, rgb(209, 204, 204) 20%, rgb(17, 17, 17) 80%); */
+
+  }
+  
+  .formlg {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .formlg-title{
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      margin: 10px;
+      margin-bottom: 50px;
+  }
+  .formlg-title p{
+      text-align: center;
+      color:#f00e0e;
+     
+      
+  }
+  
+  .formlg-title h1 {
+    display: inline;
+    font-size: 2rem;
+    text-align: center;
+    width: 80%;
+    margin-bottom: .4rem;
+    color: #fff;
+  }
+  .formlg-title h3{
+      font-size: medium;
+      text-align: center;
+  }
+  
+  .formlg-inputs {
+    margin-bottom: 0.5rem;
+    width: 80%;
+    color: black;
+    
+  }
+  
+  .formlg-inputs p {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    color: #f00e0e;
+  }
+  
+  .formlg-label {
+    display: inline-block;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+  
+  .formlg-input {
+    color: black;
+    display: block;
+    padding-left: 10px;
+    outline: none;
+    border-radius: 8px;
+    height: 40px;
+    width: 100%;
+    border: none;
+    background-color: #fff;
+  }
+  
+  .formlg-input::placeholder {
+    color: #595959;
+    font-size: 12px;
+  }
+  
+  .formlg-input-btn {
+    width: 80%;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 8px;
+    background: linear-gradient(
+      90deg,
+      rgb(39, 176, 255) 0%,
+      rgb(0, 232, 236) 100%
+    );
+    outline: none;
+    border: none;
+    /* color: #fff; */
+    font-size: 1rem;
+  }
+  
+  .formlg-input-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(
+      90deg,
+      rgb(39, 143, 255) 0%,
+      rgb(12, 99, 250) 100%
+    );
+    transition: all 0.4s ease-out;
+  }
+  
+  .formlg-input-fgpw {
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    color: #fff;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .formlg-input-fgpw a {
+    text-decoration: none;
+    color: #27cdff;
+    font-weight: 600;
+   
+  }

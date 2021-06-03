@@ -32,7 +32,7 @@ class CoinList extends Component{
     render(){
         const coinName = this.state.coinData
         const searchInput = this.state.search
-        const filteredCoins = coinName.filter(coin =>coin.name.toLowerCase().includes(searchInput.toLowerCase()));
+        const filteredCoins = coinName.filter(coinF =>coinF.name.toLowerCase().includes(searchInput.toLowerCase()));
         return(
             <div className='back-bnt'><a href="/"> &#5176;&#5176; Stock</a>
             <div className='coin-app'>
@@ -48,17 +48,17 @@ class CoinList extends Component{
                 />
                 </form>
             </div>
-                {filteredCoins.map(coin => {
+                {filteredCoins.map(coinM => {
                     return (
                         <CoinPage
-                            key={coin.id}
-                            name={coin.name}
-                            price={coin.current_price}
-                            symbol={coin.symbol}
-                            marketcap={coin.total_volume}
-                            volume={coin.market_cap}
-                            image={coin.image}
-                            priceChange={coin.price_change_percentage_24h}/>); })}
+                            key={coinM.id}
+                            name={coinM.name}
+                            price={coinM.current_price}
+                            symbol={coinM.symbol}
+                            marketcap={coinM.total_volume}
+                            volume={coinM.market_cap}
+                            image={coinM.image}
+                            priceChange={coinM.price_change_percentage_24h}/>); })}
             </div>
             </div>
   );

@@ -13,7 +13,7 @@ const Chart = (key) =>{
           .then(res => {filteredData(res.data);})
           .catch(error => console.log(error));
       }, []);
-      console.log(dataChart);
+    //   console.log(dataChart);
    const filteredData = (res)=>{
         const stockData = res
         // console.log(stockData)

@@ -6,7 +6,7 @@ export const stock =  {
    
     callApi: (ticker, callback) => { 
     axios.get(stock.lastestURL(ticker),{timeout:3000})
-         .then((res) => { callback(stock.formattedData(res.data))})
+         .then((res) => {callback(stock.formattedData(res.data))})
          .catch((err) => {callback(stock.handlingError(err))})
     
     },
@@ -43,10 +43,9 @@ formattedData: (data) =>{
        }
  },
  handlingError: (error)=>{
-     const errorData= error.response
-     const errorObj = {status: errorData.status,
-                       errData: errorData.data,
-                       reason: errorData.statusText}
+     const errorObj = {status: error.response.status,
+                       errData: error.response.data,
+                       reason: error.response.statusText}
      return errorObj
  }
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import '../style/coinpage.css'
-import CoinList from '../component/CoinList'
 
 const Coin = ({name,symbol,price,image,volume,priceChange,marketcap}) =>{
+    // console.log(priceChange,name,symbol)
     return (<>
        <div className='coin-container'>
         <div className='coin-row'>
@@ -18,7 +18,7 @@ const Coin = ({name,symbol,price,image,volume,priceChange,marketcap}) =>{
                 {priceChange < 0 ? (
                     <p className='coin-percent red'>&#9660;{priceChange.toFixed(2)}%</p>
                 ) : (
-                    <p className='coin-percent green'>&#9650;{priceChange.toFixed(2)}%</p>
+                    <p className='coin-percent green'>&#9650;{priceChange}%</p>
                 )}
 
       <p className='coin-marketcap'> Mkt Cap: ${marketcap.toLocaleString()}</p>

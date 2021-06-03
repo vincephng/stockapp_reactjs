@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { Component,useState,useEffect} from 'react';
+import React, { Component} from 'react';
 import { stock } from '../resources/stock.js';
 import '../style/stockList.css'
 

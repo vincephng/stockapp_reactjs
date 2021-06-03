@@ -9,7 +9,6 @@ const News = (symbol) =>{
 
    useEffect(()=>{
     const thisUrl = iex.base_url+ ticker+iex.typeNews+iex.api_key_vinc3
-    console.log(thisUrl)
     axios.get(thisUrl)
          .then((res) => filteredNews(res.data))
          .catch((err) => console.log(err))
@@ -17,24 +16,23 @@ const News = (symbol) =>{
 
     const filteredNews = (resNews) =>{
         const data = resNews
-
         for(let [key] of Object.entries(data)){
             const dataKey = data[key].news
             setDataNews(dataKey)
         } 
     }
-
     console.log(dataNews)
+    
    
     return(<>{dataNews.map(obj =>{
                 return(<div className='article' key={obj.headline}>
-                       <div className="source-article"><img src={thunder}/>{obj.source}</div>
+                       <div className="source-article"><img src={thunder} alt="thunder icon"/>{obj.source}</div>
                             <div className='content'>
                                 <div className='title-content'>
                                     <p>{obj.headline}</p>
-                                    <p className='read-more'><a target='_blank' href={obj.url}>Read more &#8594;</a></p>
+                                    <p className='read-more'><a target='_blank' rel="noopener noreferrer" href={obj.url}>Read more &#8594;</a></p>
                                 </div>
-                                <div className='img-news'><img src={obj.image}/></div>
+                                <div className='img-news'><img src={obj.image} alt="news"/></div>
                             </div>
              
                </div>) 

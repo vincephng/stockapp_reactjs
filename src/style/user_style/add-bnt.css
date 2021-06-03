@@ -1,0 +1,9 @@
+.add-btn{
+    border-radius: 16px;
+    width: 100px;
+    height:50px;
+    float: right;
+    margin-right: 60px;
+    background-color: rgba(18, 107, 223, 0.651);
+    border: none;
+}

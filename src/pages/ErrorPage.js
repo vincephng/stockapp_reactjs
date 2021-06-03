@@ -1,9 +1,6 @@
-import { render } from '@testing-library/react';
-import React, { Component } from 'react'
+import React from 'react'
 import '../style/error.css'
 import history from '../routes/history'
-import stockPage from './stocksPage'
-
 
 const ErrorPage =  (props) =>{
     return(
