@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "0.0.0",
   "private": true,
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon index.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "dependencies": {
@@ -12,6 +12,7 @@
     "@sendgrid/mail": "^7.4.4",
     "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.4",
+    "core-util-is": "^1.0.2",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^9.0.1",
