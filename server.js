@@ -25,6 +25,8 @@ mongoose.connect(process.env.MB_URI,
     { useNewUrlParser: true, useUnifiedTopology: true }, 
     () => console.log("Successfully access to Mongo Database"))
 
+app.use('/api/up',PostRoutes)
+app.use('/api/down',userData)
 
     if(process.env.NODE_ENV==='production')
 {
@@ -34,6 +36,5 @@ mongoose.connect(process.env.MB_URI,
     })
 }
 
-app.use('/stock/app',PostRoutes)
-app.use('/app',userData)
+
 app.listen(port, () => {console.log(`Connection Success on: ${port}`)});

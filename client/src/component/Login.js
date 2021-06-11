@@ -29,7 +29,7 @@ export const LoginForm = (props) => {
     if (isSend) {
       // axios.defaults.withCredentials = true;
       axios
-        .post("https://stockapp-vince.herokuapp.com/stock/app/login", UserLogin)
+        .post("https://stockapp-vince.herokuapp.com/api/up/login", UserLogin)
         .then((res) => {
           getUserContext()
         })
@@ -42,7 +42,7 @@ export const LoginForm = (props) => {
   const getUserContext = async () => {
     // axios.defaults.withCredentials = true;
     await axios
-      .get("https://stockapp-vince.herokuapp.com/app/user/data")
+      .get("https://stockapp-vince.herokuapp.com/api/down/user/data")
       .then((res) => {
         console.log(res)
         localStorage.setItem("UserData", JSON.stringify(res.data));

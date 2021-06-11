@@ -12,7 +12,7 @@ const AddStock = (props) => {
    const handleOnClick = (click) => {
      click.preventDefault()
 //      axios.defaults.withCredentials = true;
-     axios.post('https://stockapp-vince.herokuapp.com/stock/app/stockAdd',ticker)
+     axios.post('https://stockapp-vince.herokuapp.com/api/up/stockAdd',ticker)
           .then(res => {
               toast.success('Successfully Added')
               console.log(res)
