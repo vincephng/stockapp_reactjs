@@ -27,7 +27,7 @@ const UserPageContent = () =>{
       tickers += ticker.trim() + ',';
     }
     const Url = iex.base_url + tickers + iex.typeQuote + iex.api_key_vinc3
-    axios.defaults.withCredentials = false;
+    // axios.defaults.withCredentials = false;
     await axios.get(Url)
                 .then(res => putObjToArr(res.data))
                 .catch(err => console.log(err))  
