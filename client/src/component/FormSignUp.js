@@ -46,9 +46,9 @@ export default class FormSignUP extends Component {
     console.log(userForm)
     this.setState({ errors: this.checkInput() });
     if (this.state.isSubmit) {
-      axios.defaults.withCredentials = true;
+      // axios.defaults.withCredentials = true;
       axios
-        .post("http://localhost:3001/stock/app/signup", userForm)
+        .post("https://stockapp-vince.herokuapp.com/stock/app/signup", userForm)
         .then(res =>  {
           this.setState({ isChange: true })
           this.sendEmail()
@@ -62,7 +62,7 @@ export default class FormSignUP extends Component {
   sendEmail(){
     let emailInfo = {email: this.state.userInfo.email, username:this.state.userInfo.username}
     console.log(emailInfo)
-    axios.post("http://localhost:3001/stock/app/sendEmail", emailInfo)
+    axios.post("https://stockapp-vince.herokuapp.com/stock/app/sendEmail", emailInfo)
          .then(res => (console.log(res)))
          .catch(err => console.log(err))
   }

@@ -50,12 +50,12 @@ const login = async (req, res) => {
   //If everything above Ok then create token
   const token = jwt.sign({_id: userExisted._id}, process.env.TOKEN_SECRET)
     
-    let expireDay = new Date();
-    expireDay.setDate(expireDay.getDate()+1);
+    let expireTime = new Date();
+    expireTime.setTime(expireTime.getTime()+1 * 3600 * 1000);
     
     // Create a Cookie
     res.cookie('cookieKey', token,{
-        expires: expireDay,
+        expires: expireTime,
         // secure: req.secure || req.headers['x-forwarded-proto'] ==='https',
         httpOnly:true,
         sameSite: 'lax',

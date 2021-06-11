@@ -202,7 +202,6 @@
   color:inherit;
   text-decoration:none;
   opacity:0.8;
-  
 }
 .footer-basic ul a:hover {
   opacity:1;
@@ -211,9 +210,9 @@
 }
 
 .footer-basic .social {
-  padding-top: 25px;
+  padding-top: 15px;
   text-align:center;
-  padding-bottom:25px;
+  padding-bottom:15px;
   
 }
 .footer-basic img {
@@ -241,11 +240,15 @@
 }
 
 .footer-basic .copyright {
-  
   margin-top:15px;
   text-align:center;
   font-size:13px;
   color:#aaa;
   margin-bottom:0;
-}  
+} 
+.copyright {
+  display: block;
+  justify-content: center;
+  align-content: center;
 
+}

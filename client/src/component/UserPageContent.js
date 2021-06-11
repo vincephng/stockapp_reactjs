@@ -6,9 +6,9 @@ import {iex} from '../config/iex'
 const UserPageContent = () =>{
   const [content, setContent] = useState([])
   useEffect(async() => {
-    axios.defaults.withCredentials = true;
+    // axios.defaults.withCredentials = true;
     await axios
-      .get("http://localhost:3001/app/user/data")
+      .get("https://stockapp-vince.herokuapp.com/app/user/data")
       .then((res) => {
         const arr =res.data.user.symbolStock
         if (arr.length !== 0){
@@ -42,8 +42,8 @@ const UserPageContent = () =>{
   }
   const handleRemoveTicker = async(remove) =>{
     const ticker = {ticker:remove.target.value}
-    axios.defaults.withCredentials = true;
-    await axios.post("http://localhost:3001/stock/app/removeTicker",ticker)
+    // axios.defaults.withCredentials = true;
+    await axios.post("https://stockapp-vince.herokuapp.com/stock/app/removeTicker",ticker)
          .then(res =>console.log(res))
          .catch(err => console.log(err))
     window.location.reload()
