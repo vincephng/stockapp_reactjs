@@ -44,8 +44,9 @@ export const LoginForm = (props) => {
     await axios
       .get("https://stockapp-vince.herokuapp.com/app/user/data")
       .then((res) => {
+        console.log(res)
         localStorage.setItem("UserData", JSON.stringify(res.data));
-        history.push({pathname:'/user/home'})
+        // history.push({pathname:'/user/home'})
       })
       .catch((err) => console.log(err));
 
