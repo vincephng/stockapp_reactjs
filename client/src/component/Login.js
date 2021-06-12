@@ -46,7 +46,7 @@ export const LoginForm = (props) => {
       .then((res) => {
         console.log(res)
         localStorage.setItem("UserData", JSON.stringify(res.data));
-        // history.push({pathname:'/user/home'})
+        history.push({pathname:'/user/home'})
       })
       .catch((err) => console.log(err));
 

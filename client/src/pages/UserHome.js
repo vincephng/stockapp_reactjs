@@ -13,6 +13,7 @@ const UserMainPage = () => {
       setUserData(getUser.user);
     } else {
       console.log("Please log in");
+      history.push("/");
     }
   };
 

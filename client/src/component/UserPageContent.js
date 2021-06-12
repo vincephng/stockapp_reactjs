@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, {useState,useEffect} from 'react'
 import {iex} from '../config/iex'
+import history from '../routes/history'
 
 
 const UserPageContent = () =>{
@@ -14,10 +15,12 @@ const UserPageContent = () =>{
         if (arr.length !== 0){
           getStockContent(res)
         }else{
-          return
+            return
         }
       })
-      .catch((err) => console.log(err)); 
+      .catch((err) => {
+        localStorage.removeItem("UserData");
+        history.push("/");}); 
     
   }, [])
   const getStockContent = async(arr) =>{

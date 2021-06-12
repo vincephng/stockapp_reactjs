@@ -35,20 +35,20 @@ export default class FormSignUP extends Component {
       userInfo: { ...this.state.userInfo, [name]: value },
       errors: {},
     });
-    console.log(this.state);
+    // console.log(this.state);
 
-    console.log(this.checkInput());
+    // console.log(this.checkInput());
   };
   handleOnSubmit = (submit) => {
     submit.preventDefault();
     let userForm = this.state.userInfo;
-    delete userForm['password2'];
-    console.log(userForm)
+    // console.log(userForm)
     this.setState({ errors: this.checkInput() });
     if (this.state.isSubmit) {
       // axios.defaults.withCredentials = true;
+      delete userForm['password2'];
       axios
-        .post("https://stockapp-vince.herokuapp.com/api/down/signup", userForm)
+        .post("https://stockapp-vince.herokuapp.com/api/up/signup", userForm)
         .then(res =>  {
           this.setState({ isChange: true })
           this.sendEmail()
@@ -176,7 +176,7 @@ export default class FormSignUP extends Component {
             ) : (
               <div className="form-content-right">
                 <h1 className="form-success">We have received your request!</h1>
-                <img className="form-img-2" src={work} alt="success-image" />
+                <img className="form-img-2" src={work} alt="success" />
               </div>
             )}
           </div>
