@@ -20,7 +20,8 @@ const UserPageContent = () =>{
       })
       .catch((err) => {
         localStorage.removeItem("UserData");
-        history.push("/");}); 
+        history.push("/");
+      }); 
     
   }, [])
   const getStockContent = async(arr) =>{
@@ -69,7 +70,7 @@ const UserPageContent = () =>{
             </div>) 
         }) 
       }</>) }else{
-            return(<div className="no-content"><h3>Nothing to show. Please use search bar to add your stock</h3></div>)
+            return(<div className="no-content"><h3>Nothing to show. Please use search bar in <a href="/">Home page</a> to add your stock</h3></div>)
         }
 }
 

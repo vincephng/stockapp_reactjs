@@ -38,7 +38,7 @@ const UserMainPage = () => {
           </div>
         </div>
         <div className="user-profile-options">
-          <div className="option">
+          <div className="option-profile">
             <img src="./images/twitch.png" alt="" />
             <h2>Profile</h2>
           </div>
@@ -48,7 +48,7 @@ const UserMainPage = () => {
               <h2>Home</h2>
             </a>
           </div>
-          <div className="option">
+          <div className="option-news">
             <img src="./images/upcoming.png" alt="" />
             <h2>News</h2>
           </div>
@@ -64,7 +64,7 @@ const UserMainPage = () => {
             <img src={thankPic} alt="" />
           </div> */}
       </div>
-      <div className="content-page">
+      <div className="content-userpage">
         <div className="status">
           <h1>Stock</h1>
           <input type="text" />

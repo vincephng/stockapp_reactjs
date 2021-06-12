@@ -1,8 +1,7 @@
 .container-userhome {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  background: none;
+  /* width: 100%;
+  height: 100%; */
+  padding: 5px;
   display: flex;
   background-color: #1a1a1c;
 }
@@ -12,7 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 60px;
   background-color: #1a1a1c;
 }
 .user-profile {
@@ -30,33 +29,28 @@
 .user-profile-title {
   justify-content: center;
   text-align: center;
-  margin: 0px;
-  margin-top: 10px;
+  padding: 0px;
+  padding-top: 10px;
 }
 .user-profile-options {
-  margin-top: 20px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  /* margin-top: 10px; */
+  display: plex;
+  padding: 50px;
+  height: 650px;
+  /* align-items: center;
+  text-align: center; */
 }
-.option,
-.option-logout,
-.option-home {
-  background-color: #1a1a1c;
-  display: flex;
-  margin: 2rem 1rem;
-  padding: 1rem 5rem;
-  align-items: center;
+.option-logout {
+  padding-bottom: 30px;
 }
-.option h2,
-.option-logout h2,
-.option-home h2 {
+.user-profile-options h2 {
   display: inline;
-  padding: 0rem 2rem;
+  padding: 50px 50px;
   cursor: pointer;
 }
-.option-home a {
+.option-home a h2 {
   text-decoration: none;
+  color: rgb(14, 143, 14);
 }
 .content-page {
   background-color: #1a1a1c;
@@ -66,8 +60,11 @@
 .option-logout button {
   background-color: #1a1a1c;
   border: none;
+  color: rgb(231, 25, 25);
 }
-
+.option-home, .option-logout, .option-profile, .option-news{
+  padding-top: 50px;
+}
 /* .thanks {
     background: linear-gradient(to right top, #65dfc9, #6cdbeb);
     background-image: linear-gradient(
@@ -97,7 +94,7 @@
   } */
 /* content page */
 .status {
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 
 .status input {
@@ -119,12 +116,12 @@
   border-radius: 2rem;
 }
 
-.content-page {
+.content-userpage {
   margin: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background: none;
+  background-color: #1a1a1c;
 }
 
 .card {
@@ -178,6 +175,9 @@
 
 .no-content h3 {
   color: gray;
+}
+.no-content a{
+  text-decoration: none;
 }
 .percent-down{
    color: red;
