@@ -37,16 +37,15 @@ export default class FormSignUP extends Component {
       errors: {},
     });
     // console.log(this.state);
-
     // console.log(this.checkInput());
   };
   handleOnSubmit = (submit) => {
     submit.preventDefault();
-    let userForm = this.state.userInfo;
-    // console.log(userForm)
+    let userForm = {...this.state.userInfo, username: this.state.userInfo.username.toLowerCase(), email:this.state.userInfo.email.toLowerCase()}
     this.setState({ errors: this.checkInput() });
     if (this.state.isSubmit) {
       // axios.defaults.withCredentials = true;
+      // console.log(userForm)
       delete userForm['password2'];
       axios
         .post(apiLink.herokuUrl + "api/up/signup", userForm)
@@ -61,7 +60,7 @@ export default class FormSignUP extends Component {
     }
   };
   sendEmail(){
-    let emailInfo = {email: this.state.userInfo.email, username:this.state.userInfo.username}
+    let emailInfo = {email: this.state.userInfo.email.toLowerCase(), username:this.state.userInfo.username.toLowerCase()}
     console.log(emailInfo)
     axios.post(apiLink.herokuUrl + "api/up/sendEmail", emailInfo)
          .then(res => (console.log(res)))

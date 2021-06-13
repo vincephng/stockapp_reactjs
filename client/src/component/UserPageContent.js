@@ -58,7 +58,7 @@ const UserPageContent = () =>{
           content.map(obj =>{
             const percentChange = obj.quote.changePercent.toFixed(3)
             return( <div className="card" key={obj.quote.symbol}>
-              <img src="./images/assassins.png" alt="" />
+              {/* <img src="" alt="" /> */}
               <div className="card-info">
                 <button value={obj.quote.symbol} onClick={handleRemoveTicker}>Remove</button>
                 <h2>{obj.quote.symbol} ({obj.quote.changePercent<0?(<p className="percent-down">&#9660; {percentChange} %</p>) :

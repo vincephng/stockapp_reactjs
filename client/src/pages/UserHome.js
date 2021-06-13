@@ -39,17 +39,17 @@ const UserMainPage = () => {
         </div>
         <div className="user-profile-options">
           <div className="option-profile">
-            <img src="./images/twitch.png" alt="" />
+            {/* <img src="./images/twitch.png" alt="" /> */}
             <h2>Profile</h2>
           </div>
           <div className="option-home">
-            <img src="./images/steam.png" alt="" />
+            {/* <img src="./images/steam.png" alt="" /> */}
             <a href="/">
               <h2>Home</h2>
             </a>
           </div>
           <div className="option-news">
-            <img src="./images/upcoming.png" alt="" />
+            {/* <img src="./images/upcoming.png" alt="" /> */}
             <h2>News</h2>
           </div>
           <div className="option-logout">
