@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, {useState,useEffect} from 'react'
 import {iex} from '../config/iex'
+import { apiLink } from '../config/apiLink'
 import history from '../routes/history'
 
 
@@ -9,7 +10,7 @@ const UserPageContent = () =>{
   useEffect(async() => {
     // axios.defaults.withCredentials = true;
     await axios
-      .get("https://stockapp-vince.herokuapp.com/api/down/user/data")
+      .get(apiLink.herokuUrl + "api/down/user/data")
       .then((res) => {
         const arr =res.data.user.symbolStock
         if (arr.length !== 0){
@@ -47,7 +48,7 @@ const UserPageContent = () =>{
   const handleRemoveTicker = async(remove) =>{
     const ticker = {ticker:remove.target.value}
     // axios.defaults.withCredentials = true;
-    await axios.post("https://stockapp-vince.herokuapp.com/api/up/removeTicker",ticker)
+    await axios.post(apiLink.herokuUrl +"api/up/removeTicker",ticker)
          .then(res =>console.log(res))
          .catch(err => console.log(err))
     window.location.reload()

@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import fear from "../pics/Feelthefear.jpg";
 import history from "../routes/history";
 import axios from "axios";
+import { apiLink } from '../config/apiLink'
 export const LoginForm = (props) => {
   const [userLogin, setUserLogin] = useState({ username: "", password: "" });
   const [isSubmit, setIsSubmit] = useState(false);
@@ -29,7 +30,7 @@ export const LoginForm = (props) => {
     if (isSend) {
       // axios.defaults.withCredentials = true;
       axios
-        .post("https://stockapp-vince.herokuapp.com/api/up/login", UserLogin)
+        .post(apiLink.herokuUrl + "api/up/login", UserLogin)
         .then((res) => {
           getUserContext()
         })
@@ -42,15 +43,13 @@ export const LoginForm = (props) => {
   const getUserContext = async () => {
     // axios.defaults.withCredentials = true;
     await axios
-      .get("https://stockapp-vince.herokuapp.com/api/down/user/data")
+      .get(apiLink.herokuUrl + "api/down/user/data")
       .then((res) => {
         console.log(res)
         localStorage.setItem("UserData", JSON.stringify(res.data));
-        history.push({pathname:'/user/home'})
       })
       .catch((err) => console.log(err));
-
-    
+      history.push({pathname:'/user/home'})
   };
   const checkValid = () => {
     if (!userLogin.username.trim()) {

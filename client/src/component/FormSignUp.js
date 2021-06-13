@@ -3,6 +3,7 @@ import "../style/formSignUp.css";
 import stock_pic from "../pics/thinking.jpg";
 import axios from "axios";
 import work from "../pics/Work_6.jpg";
+import { apiLink } from "../config/apiLink";
 
 export default class FormSignUP extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ export default class FormSignUP extends Component {
       // axios.defaults.withCredentials = true;
       delete userForm['password2'];
       axios
-        .post("https://stockapp-vince.herokuapp.com/api/up/signup", userForm)
+        .post(apiLink.herokuUrl + "api/up/signup", userForm)
         .then(res =>  {
           this.setState({ isChange: true })
           this.sendEmail()
@@ -62,7 +63,7 @@ export default class FormSignUP extends Component {
   sendEmail(){
     let emailInfo = {email: this.state.userInfo.email, username:this.state.userInfo.username}
     console.log(emailInfo)
-    axios.post("https://stockapp-vince.herokuapp.com/api/up/sendEmail", emailInfo)
+    axios.post(apiLink.herokuUrl + "api/up/sendEmail", emailInfo)
          .then(res => (console.log(res)))
          .catch(err => console.log(err))
   }
