@@ -31,6 +31,9 @@
   padding: 0px;
   padding-top: 10px;
 }
+.user-profile-title h3{
+  color:#4801ff;
+}
 .user-profile-options {
   /* margin-top: 10px; */
   display: plex;
